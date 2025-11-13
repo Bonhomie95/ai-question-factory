@@ -1,0 +1,9 @@
+Generate 10 unique GEOGRAPHY questions following the GENERAL RULES.
+
+CONTENT REQUIREMENTS:
+- Cover continents, rivers, deserts, oceans, capitals, climate, and cultures.
+- Include both physical and human geography.
+- Mix easy, medium, and hard.
+- Ensure global diversity: Africa, Europe, Asia, Americas, Oceania.
+
+Return ONLY the JSON array.

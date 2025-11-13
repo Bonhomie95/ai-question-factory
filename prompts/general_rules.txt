@@ -1,0 +1,14 @@
+GENERAL RULES:
+- ALWAYS return valid JSON only. No commentary. No markdown.
+- Output must be a JSON array of objects.
+- Each object must contain:
+  {
+    "question": "...",
+    "options": ["A", "B", "C", "D"],
+    "answer": "A",
+    "category": "<category>",
+    "difficulty": "easy|medium|hard"
+  }
+- Avoid repeating any question that sounds similar to previous knowledge.
+- Use global variation and avoid repeating the same style.
+- Keep questions short, clear, factual, and interesting.

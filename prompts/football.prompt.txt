@@ -1,0 +1,9 @@
+Generate 10 unique FOOTBALL (SOCCER) questions following the GENERAL RULES.
+
+CONTENT REQUIREMENTS:
+- Cover World Cup, UEFA Champions League, AFCON, Copa America, Premier League, La Liga, Serie A, Bundesliga.
+- Include players, clubs, stadiums, records, transfers, and historical moments.
+- Use modern and classic football (1970s → present).
+- Ensure global coverage: Africa, Europe, South America, Asia.
+
+Return ONLY the JSON array.

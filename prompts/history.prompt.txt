@@ -1,0 +1,9 @@
+Generate 10 unique HISTORY questions following the GENERAL RULES.
+
+CONTENT REQUIREMENTS:
+- Cover world wars, civilizations, leaders, inventions, revolutions, African history, European history, Asian empires, and key dates.
+- Include ancient, medieval, and modern timelines.
+- Avoid overly obscure topics.
+- Ensure diverse continents and cultures.
+
+Return ONLY the JSON array.

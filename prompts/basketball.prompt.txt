@@ -1,0 +1,8 @@
+Generate 10 unique BASKETBALL questions following the GENERAL RULES.
+
+CONTENT REQUIREMENTS:
+- Cover NBA, WNBA, EuroLeague, FIBA, historical legends, modern stars, rules, scoring, MVPs, championships, and team histories.
+- Include questions across different decades (1980s → present).
+- Include international basketball (not only NBA).
+
+Return ONLY the JSON array.
