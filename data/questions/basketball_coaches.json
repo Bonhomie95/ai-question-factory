@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Which coach has coached all of these players: A, B, C, D? ",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer": "A",
+    "category": "basketball_coaches",
+    "difficulty": "easy"
+  }
+]

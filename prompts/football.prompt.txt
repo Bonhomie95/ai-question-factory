@@ -1,27 +1,27 @@
 Generate exactly 10 multiple-choice FOOTBALL (soccer) questions.
 
-Schema:
-{
-  "question": "string",
-  "options": ["string", "string", "string", "string"],
-  "answer": "string",
-  "difficulty": "easy" | "medium" | "hard"
-}
+CATEGORY: "football"
 
-STRICT RULES:
-- Output ONLY a JSON array of 10 objects.
-- No explanation.
-- No markdown.
-- No backticks.
-- All fields must exist.
-- Answer MUST match an option.
-- Options MUST be 4 unique values.
+Follow GENERAL RULES and AUTO DIFFICULTY SCALING.
 
 CONTENT REQUIREMENTS:
-- Include World Cup, UEFA, EPL, La Liga, AFCON, Copa America, legends, modern stars, clubs, managers, tactics, and rules.
+- Include World Cup, UEFA Champions League, Europa League.
+- Include EPL, La Liga, Serie A, Bundesliga, Ligue 1.
+- Include AFCON, Copa America, Asian Cup, CONCACAF Gold Cup.
+- Include legends, modern stars, transfers, managers, tactics, club histories.
+- Cover 1980s → present.
+- All facts MUST be accurate.
 
-RETURN ONLY THIS:
-[
-  {...}, {...}, {...}, {...}, {...},
-  {...}, {...}, {...}, {...}, {...}
-]
+JSON FORMAT:
+{
+  "question": "...",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "football",
+  "difficulty": "<auto>"
+}
+
+RULES:
+- Options must be unique.
+- Answer MUST match exactly one option.
+- Only return a JSON array of 10 questions.

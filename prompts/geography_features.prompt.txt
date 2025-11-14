@@ -1,0 +1,42 @@
+Generate exactly 10 multiple-choice GEOGRAPHY questions.
+
+CATEGORY: "geography_features"
+
+QUESTION TYPE:
+"Which country matches ALL of these features?"
+
+FACT RULES:
+- Every feature MUST be correct and verified.
+- Replace any uncertain combination immediately.
+
+FEATURE TYPES (allowed):
+- climate
+- rivers
+- mountains
+- lakes
+- borders
+- population characteristics
+- world regions or subregions
+- major cities or landmarks
+- topography, deserts, coastlines
+
+AUTO DIFFICULTY:
+easy    = 3 features
+medium  = 4 features
+hard    = 5 features
+expert  = 6
+elite   = 7
+legendary = 8–10
+
+JSON FORMAT:
+{
+  "question": "Which country matches all of these features: <list>?",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "geography_features",
+  "difficulty": "<auto>"
+}
+
+RULES:
+- 1 correct option, 3 incorrect.
+- Only return a JSON array of 10.

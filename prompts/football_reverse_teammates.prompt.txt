@@ -1,0 +1,34 @@
+Generate exactly 10 multiple-choice FOOTBALL questions.
+
+CATEGORY: "football_not_teammates"
+
+QUESTION TYPE:
+"Which player has NOT played with ALL the listed players?"
+
+FACT RULES:
+- Verify teammate history across club + international football.
+- Three options MUST have played with ALL listed players.
+- One option MUST NOT have played with all of them.
+- If ANY combination is uncertain, replace before output.
+
+AUTO DIFFICULTY SCALING (do not assign manually):
+easy       = 3 listed players  
+medium     = 4  
+hard       = 5  
+expert     = 6  
+elite      = 7  
+legendary  = 8–10  
+
+JSON SCHEMA:
+{
+  "question": "Which player has NOT played with all these players: A, B, C, ...?",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "football_not_teammates",
+  "difficulty": "<auto>"
+}
+
+RULES:
+- All options must be real players.
+- Exactly one correct answer.
+- No markdown. Only JSON array.

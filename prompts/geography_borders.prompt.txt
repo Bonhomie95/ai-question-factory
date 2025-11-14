@@ -1,0 +1,33 @@
+Generate exactly 10 multiple-choice GEOGRAPHY questions.
+
+CATEGORY: "geography_borders_all"
+
+QUESTION TYPE:
+"Which country borders ALL of these countries?"
+
+FACT RULES:
+- Every border listed MUST be real and accurate.
+- If ANY border combination is uncertain, replace before generating the question.
+- Only include combinations you are 100% confident about.
+
+AUTO DIFFICULTY SCALING:
+easy    = 3 countries
+medium  = 4 countries
+hard    = 5 countries
+expert  = 6
+elite   = 7
+legendary = 8–10
+
+STRICT JSON SCHEMA:
+{
+  "question": "Which country borders all of these countries: A, B, C, ...?",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "geography_borders_all",
+  "difficulty": "<auto>"
+}
+
+RULES:
+- Answer MUST be the only country that borders ALL listed countries.
+- Other 3 options MUST NOT border all listed.
+- No markdown, no explanation—ONLY a JSON array of 10.

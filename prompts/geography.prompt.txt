@@ -1,27 +1,38 @@
 Generate exactly 10 multiple-choice GEOGRAPHY questions.
 
-Schema:
+CATEGORY: "geography"
+
+STRICT OUTPUT RULES:
+- Output ONLY a JSON array.
+- No markdown, no explanations, no backticks.
+
+JSON SCHEMA:
 {
   "question": "string",
   "options": ["string", "string", "string", "string"],
   "answer": "string",
-  "difficulty": "easy" | "medium" | "hard"
+  "category": "geography",
+  "difficulty": "easy" | "medium" | "hard" | "expert" | "elite" | "legendary"
 }
 
-STRICT RULES:
-- Output ONLY a JSON array of 10 objects.
-- No explanation or natural language.
-- No markdown.
-- No backticks.
-- All fields required.
-- Answer MUST be inside options.
-- Options MUST be 4 unique values.
+MANDATORY VALIDITY RULES:
+- All 4 options must be unique.
+- Answer must match exactly one option.
+- Difficulty must be one of the allowed strings.
+- All facts must be accurate.
+- If uncertain about any fact, replace the question.
+
+AUTO DIFFICULTY LOGIC:
+easy       = capitals, flags, continents  
+medium     = borders, major rivers, large cities  
+hard       = climate zones, regional specifics, mountain systems  
+expert     = geopolitical complexities  
+elite      = advanced environmental or demographic details  
+legendary  = extremely advanced expert-level knowledge  
 
 CONTENT REQUIREMENTS:
-- Include countries, capitals, mountains, rivers, climate, continents, borders, population, and world locations.
+- Countries, capitals, borders, rivers, mountains.
+- Population data, regions, climate, world cities.
+- Geography must be factual and diverse.
 
-RETURN ONLY THIS:
-[
-  {...}, {...}, {...}, {...}, {...},
-  {...}, {...}, {...}, {...}, {...}
-]
+Return ONLY a JSON array.

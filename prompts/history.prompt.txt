@@ -1,29 +1,38 @@
 Generate exactly 10 multiple-choice HISTORY questions.
 
-Use the following schema for every question:
+CATEGORY: "history"
 
+STRICT OUTPUT RULES:
+- Output ONLY a JSON array.
+- No markdown, no explanations, no backticks.
+
+JSON SCHEMA:
 {
   "question": "string",
   "options": ["string", "string", "string", "string"],
   "answer": "string",
-  "difficulty": "easy" | "medium" | "hard"
+  "category": "history",
+  "difficulty": "easy" | "medium" | "hard" | "expert" | "elite" | "legendary"
 }
 
-STRICT RULES:
-- Output ONLY a JSON array of 10 objects.
-- No explanation.
-- No markdown.
-- No backticks.
-- No text before or after the JSON.
-- The answer MUST match an option.
-- Options MUST be 4 unique values.
-- Difficulty must be one of: easy, medium, hard.
+MANDATORY RULES:
+- All 4 options MUST be unique.
+- Answer MUST match exactly one option.
+- Difficulty MUST be valid.
+- No hallucinated or uncertain facts.
+- Replace ambiguous facts immediately.
+
+AUTO DIFFICULTY LOGIC:
+easy       = widely known events or leaders  
+medium     = moderately known major events  
+hard       = deeper or regional history  
+expert     = multi-era or non-obvious facts  
+elite      = detailed empire/treaty/dynasty knowledge  
+legendary  = extremely high-level advanced history  
 
 CONTENT REQUIREMENTS:
-- Cover ancient civilizations, empires, wars, colonization, treaties, revolutions, dynasties, and major leaders.
+- Ancient civilizations, empires, wars.
+- Revolutions, colonization, economic shifts.
+- Treaties, dynasties, global events, inventions.
 
-RETURN ONLY THIS:
-[
-  {...}, {...}, {...}, {...}, {...},
-  {...}, {...}, {...}, {...}, {...}
-]
+Return ONLY a JSON array of 10 questions.

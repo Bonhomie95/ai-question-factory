@@ -1,0 +1,32 @@
+Generate exactly 10 multiple-choice HISTORY questions.
+
+CATEGORY: "history_false_year"
+
+QUESTION TYPE:
+"Which event did NOT happen in this year?"
+
+FACT RULES:
+- Select one specific historical year.
+- Three options MUST be events that occurred in that year.
+- One option MUST be incorrect (from another year).
+- Replace uncertain events.
+
+AUTO DIFFICULTY:
+easy       = 2 real events + 1 fake  
+medium     = 3 real  
+hard       = 4 real  
+expert     = 5  
+elite      = 6  
+legendary  = 7–10 events  
+
+JSON FORMAT:
+{
+  "question": "Which event did NOT happen in the year <year>?",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "history_false_year",
+  "difficulty": "<auto>"
+}
+
+RULES:
+- Only JSON array of 10.

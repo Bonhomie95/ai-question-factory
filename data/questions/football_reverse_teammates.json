@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Which player has NOT played with all these players: A, B, C, D? ",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer": "A",
+    "category": "football_not_teammates",
+    "difficulty": "easy"
+  }
+]

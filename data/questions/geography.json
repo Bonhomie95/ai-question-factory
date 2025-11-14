@@ -1,0 +1,158 @@
+[
+  {
+    "question": "What is the capital of Peru?",
+    "options": [
+      "Madrid",
+      "Cairo",
+      "Lima",
+      "Vienna"
+    ],
+    "answer": "Lima",
+    "category": "geography",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which river flows through both Germany and France?",
+    "options": [
+      "Danube",
+      "Rhine",
+      "Elbe",
+      "Oder"
+    ],
+    "answer": "Rhine",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is the highest mountain in Europe by height?",
+    "options": [
+      "Mount Everest",
+      "Mont Blanc",
+      "Carpathian Mountains",
+      "Pyrenees"
+    ],
+    "answer": "Mont Blanc",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which country shares a border with both Russia and China?",
+    "options": [
+      "South Korea",
+      "Mongolia",
+      "Uzbekistan",
+      "Kazakhstan"
+    ],
+    "answer": "Kazakhstan",
+    "category": "geography",
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the world’s largest desert by area?",
+    "options": [
+      "Sahara Desert",
+      "Gobi Desert",
+      "Antarctic Ice Sheet",
+      "Atacama Desert"
+    ],
+    "answer": "Sahara Desert",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which country has the highest population density in Europe?",
+    "options": [
+      "Germany",
+      "Netherlands",
+      "Spain",
+      "Italy"
+    ],
+    "answer": "Netherlands",
+    "category": "geography",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which country in Asia borders both the Caspian Sea and the Indian Ocean?",
+    "options": [
+      "Iran",
+      "Kazakhstan",
+      "Afghanistan",
+      "Turkey"
+    ],
+    "answer": "Iran",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which country is known for its fjords and borders Norway?",
+    "options": [
+      "Finland",
+      "Sweden",
+      "Norway",
+      "Denmark"
+    ],
+    "answer": "Sweden",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which country shares a border with Chad in the Central African region?",
+    "options": [
+      "Niger",
+      "Uganda",
+      "Mali",
+      "Ethiopia"
+    ],
+    "answer": "Niger",
+    "category": "geography",
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the largest capital city by population in Africa?",
+    "options": [
+      "Cairo",
+      "Abuja",
+      "Lagos",
+      "Luanda"
+    ],
+    "answer": "Lagos",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which river flows through the country of Switzerland and is known as its 'National River'?",
+    "options": [
+      "Rhine",
+      "Danube",
+      "Mekong",
+      "Ganges"
+    ],
+    "answer": "Rhine",
+    "category": "geography",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which continent has the largest area of Antarctica on its territory?",
+    "options": [
+      "Australia",
+      "Europe",
+      "South America",
+      "North America"
+    ],
+    "answer": "South America",
+    "category": "geography",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which climate zone is characterized by hot and humid weather all year round?",
+    "options": [
+      "Tropical",
+      "Temperate",
+      "Arctic",
+      "Polar"
+    ],
+    "answer": "Tropical",
+    "category": "geography",
+    "difficulty": "easy"
+  }
+]

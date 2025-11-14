@@ -1,0 +1,29 @@
+Generate exactly 10 multiple-choice BASKETBALL teammate-logic questions.
+
+CATEGORY: "basketball_teammates"
+
+QUESTION TYPE:
+"Which player has played with ALL of the following players?"
+
+FACT REQUIREMENTS:
+- Every teammate relationship MUST be concrete and accurate.
+- Use NBA, WNBA, EuroLeague, and national teams.
+- If ANY pairing is uncertain, replace before generating final output.
+- List 4–10 players depending on difficulty.
+
+AUTO DIFFICULTY:
+Assign based on the number of listed players:
+easy → hard → expert → elite → legendary
+
+JSON FORMAT:
+{
+  "question": "Which player has played with all of the following players: A, B, C, ...?",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "basketball_teammates",
+  "difficulty": "<auto>"
+}
+
+RULES:
+- 3 options must NOT satisfy the teammate condition.
+- Only JSON array in the output.

@@ -1,0 +1,35 @@
+Generate exactly 10 multiple-choice FOOTBALL questions.
+
+CATEGORY: "football_coaches"
+
+QUESTION TYPE:
+"Which coach has managed ALL of these players?"
+
+FACT RULES:
+- Verify every player–coach relationship.
+- Include top leagues, Champions League, Europa League, and national teams.
+- If ANY player-coach pairing is uncertain, replace it immediately.
+- All four options must be real coaches.
+
+AUTO DIFFICULTY SCALING:
+easy    = 4 player names  
+medium  = 5 player names  
+hard    = 6 player names  
+expert  = 7 player names  
+elite   = 8 player names  
+legendary = 9–10 player names  
+
+JSON FORMAT:
+{
+  "question": "Which coach has managed all of these players: A, B, C, ...?",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "football_coaches",
+  "difficulty": "<auto>"
+}
+
+ADDITIONAL RULES:
+- Correct option MUST have managed ALL listed players.
+- Other 3 must NOT satisfy the condition.
+- No markdown. No explanation.
+- Return ONLY a JSON array.

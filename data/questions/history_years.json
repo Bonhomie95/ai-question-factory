@@ -1,0 +1,14 @@
+[
+  {
+    "question": "What year did all of these events happen: 1789, 1789, 1789?",
+    "options": [
+      "1789",
+      "1689",
+      "1589",
+      "1489"
+    ],
+    "answer": "1789",
+    "category": "history_events_same_year",
+    "difficulty": "easy"
+  }
+]

@@ -1,34 +1,41 @@
 import { CronJob } from 'cron';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { exec } from 'child_process';
+import { spawn } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-export function startCron() {
-  console.log('🕒 Starting Global Cron Job...');
 
+function runScript() {
   const runnerPath = path.join(__dirname, '..', 'runners', 'runAll.js');
 
-  // 1. RUN IMMEDIATELY
-  exec(`node "${runnerPath}"`, (err, stdout, stderr) => {
-    console.log('🚀 Initial Run Started...');
-    if (err) console.error('❌ Initial Error:', err);
-    if (stdout) console.log(stdout);
-    if (stderr) console.error(stderr);
+  console.log('⚡ Running batch generator...');
+
+  const child = spawn('node', [runnerPath], {
+    stdio: 'inherit', // keep logs visible
+    shell: false,
   });
 
-  // 2. RUN EVERY 3 HOURS
-  new CronJob('0 */3 * * *', () => {
-    console.log('\n⏳ CRON: Running full batch generator...');
+  child.on('close', (code) => {
+    console.log(`✔ Batch process finished with code ${code}`);
+  });
 
-    exec(`node "${runnerPath}"`, (err, stdout, stderr) => {
-      if (err) {
-        console.error('❌ Cron execution error:', err);
-        return;
-      }
-      console.log(stdout);
-      if (stderr) console.error(stderr);
-    });
-  }).start();
+  child.on('error', (err) => {
+    console.error('❌ Spawn error:', err);
+  });
+}
+
+export function startCron() {
+  console.log('🕒 Global Cron Job Started');
+
+  // 1. Run immediately
+  runScript();
+
+  // 2. Run every 3 hours
+  new CronJob('0 */3 * * *', runScript).start();
+}
+
+// Allow direct testing: node cron.js
+if (process.argv[1].includes('cron.js')) {
+  startCron();
 }

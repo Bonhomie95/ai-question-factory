@@ -1,0 +1,36 @@
+Generate exactly 10 multiple-choice FOOTBALL (soccer) questions.
+
+CATEGORY: "football_multiclub"
+
+QUESTION TYPE:
+"Which player played for ALL of these clubs?"
+
+FACT RULES:
+- Verify EACH club history for the correct answer across all seasons.
+- Clubs MUST be real teams the player truly played for.
+- If ANY club is uncertain, replace the combination before generating output.
+- Only include 100% historically accurate combinations.
+
+AUTO DIFFICULTY SCALING (do NOT assign manually):
+easy      = 4 clubs  
+medium    = 5 clubs  
+hard      = 6 clubs  
+expert    = 7 clubs  
+elite     = 8 clubs  
+legendary = 9–10 clubs  
+
+JSON SCHEMA:
+{
+  "question": "Which player played for all of these clubs: A, B, C, ...?",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "football_multiclub",
+  "difficulty": "<auto>"
+}
+
+ADDITIONAL RULES:
+- All 4 options MUST be real footballers.
+- The correct option MUST have played for ALL listed clubs.
+- The other 3 options MUST NOT match the full list.
+- No markdown. No explanation. No filler.
+- Output ONLY a JSON array of 10 items.

@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Which event happened first among these: Alexander the Great conquers Egypt, Pericles dies, or Pythagoras discovers the theorem of right triangles?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer": "B",
+    "category": "history_events_first",
+    "difficulty": "easy"
+  }
+]

@@ -1,0 +1,32 @@
+Generate exactly 10 multiple-choice HISTORY questions.
+
+CATEGORY: "history_events_first"
+
+QUESTION TYPE:
+"Which event happened FIRST among these?"
+
+FACT RULES:
+- Verify dates strictly.
+- If ANY date is uncertain or ambiguous, replace it.
+- All events must be historically documented.
+
+AUTO DIFFICULTY:
+easy    = 3 events
+medium  = 4 events
+hard    = 5 events
+expert  = 6
+elite   = 7
+legendary = 8–10
+
+JSON FORMAT:
+{
+  "question": "Which event happened first among these: <list>?",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "history_events_first",
+  "difficulty": "<auto>"
+}
+
+RULES:
+- EXACTLY one event must be the earliest.
+- Only output a JSON array.

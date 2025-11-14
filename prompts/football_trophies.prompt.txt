@@ -1,0 +1,36 @@
+Generate exactly 10 multiple-choice FOOTBALL questions.
+
+CATEGORY: "football_trophies"
+
+QUESTION TYPE:
+"Which player won ALL of these trophies?"
+
+FACT RULES:
+- Verify that the correct option won EVERY listed trophy.
+- Include trophies such as:
+  UCL, World Cup, Euro, Copa America, AFCON,
+  Premier League, La Liga, Serie A, Bundesliga,
+  Ballon d'Or, FA Cup, Copa del Rey, etc.
+- Replace any uncertain combination.
+
+AUTO DIFFICULTY:
+EASY    = 3 trophies  
+MEDIUM  = 4 trophies  
+HARD    = 5 trophies  
+EXPERT  = 6 trophies  
+ELITE   = 7–8 trophies  
+LEGENDARY = 9–10 trophies  
+
+JSON FORMAT:
+{
+  "question": "Which player won all of these trophies: A, B, C, ...?",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "football_trophies",
+  "difficulty": "<auto>"
+}
+
+RULES:
+- 3 options must NOT meet all trophies.
+- Only reliable, verified historical data allowed.
+- Output ONLY JSON array.

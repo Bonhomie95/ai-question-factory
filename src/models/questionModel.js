@@ -1,53 +1,44 @@
 import fs from 'fs-extra';
 import path from 'path';
-import { nanoid } from 'nanoid';
 import { config } from '../config.js';
 
 export class QuestionModel {
   constructor(category) {
     this.category = category;
 
-    this.paths = {
-      pending: path.join(config.PATHS.QUESTIONS, category, 'pending'),
-      archive: path.join(config.PATHS.QUESTIONS, category, 'archive'),
-    };
+    // Single file per category
+    this.filePath = path.join(config.PATHS.QUESTIONS, `${category}.json`);
 
-    // ensure category dirs exist
-    Object.values(this.paths).forEach((dir) => {
-      fs.ensureDirSync(dir);
-    });
+    // Ensure directory exists
+    fs.ensureDirSync(config.PATHS.QUESTIONS);
+
+    // Ensure file exists
+    if (!fs.existsSync(this.filePath)) {
+      fs.writeJsonSync(this.filePath, [], { spaces: 2 });
+    }
+
+    // Load into memory
+    try {
+      this.data = fs.readJSONSync(this.filePath);
+      if (!Array.isArray(this.data)) this.data = [];
+    } catch (err) {
+      console.error(`⚠️ Failed reading ${category}.json, resetting...`);
+      this.data = [];
+      fs.writeJsonSync(this.filePath, [], { spaces: 2 });
+    }
   }
 
-  saveToPending(questionObj) {
-    const id = nanoid();
-    const filePath = path.join(this.paths.pending, `${id}.json`);
+  saveMany(list) {
+    // append new questions
+    this.data.push(...list);
 
-    fs.writeJsonSync(filePath, {
-      id,
-      category: this.category,
-      createdAt: Date.now(),
-      ...questionObj,
-    });
+    // write back to disk
+    fs.writeJsonSync(this.filePath, this.data, { spaces: 2 });
 
-    return id;
+    return list.length;
   }
 
-  saveManyToPending(list) {
-    return list.map((q) => this.saveToPending(q));
-  }
-
-  loadPending() {
-    const files = fs.readdirSync(this.paths.pending);
-    return files.map((f) => fs.readJSONSync(path.join(this.paths.pending, f)));
-  }
-
-  archiveAllPending() {
-    const files = fs.readdirSync(this.paths.pending);
-
-    files.forEach((file) => {
-      const src = path.join(this.paths.pending, file);
-      const dest = path.join(this.paths.archive, file);
-      fs.moveSync(src, dest, { overwrite: true });
-    });
+  getAll() {
+    return this.data;
   }
 }

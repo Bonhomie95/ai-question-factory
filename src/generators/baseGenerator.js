@@ -73,6 +73,10 @@ export class BaseGenerator {
         console.log('⚠️ Filtered out (quality):', validation.errors.join(', '));
         continue;
       }
+      if (!q.difficulty) {
+        console.log('⚠️ Missing difficulty, skipping:', q.question);
+        continue;
+      }
 
       const text = q.question || q.prompt || JSON.stringify(q);
 
@@ -89,9 +93,11 @@ export class BaseGenerator {
       newQuestions.push(q);
     }
 
-    this.model.saveManyToPending(newQuestions);
+    this.model.saveMany(newQuestions);
 
-    console.log(`✅ Saved ${newQuestions.length} new questions.`);
+    console.log(
+      `✅ Saved ${newQuestions.length} new questions to ${this.category}.json.`
+    );
 
     return newQuestions.length;
   }

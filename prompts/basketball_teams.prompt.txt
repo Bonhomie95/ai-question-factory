@@ -1,0 +1,35 @@
+Generate exactly 10 multiple-choice BASKETBALL questions.
+
+CATEGORY: "basketball_multiteam"
+
+QUESTION TYPE:
+"Which player has played for ALL of these teams?"
+
+STRICT FACT RULES:
+- Verify that the correct option played for EVERY listed team.
+- Include NBA, WNBA, EuroLeague, CBA, NBL, and international leagues.
+- Replace any uncertain historical team link.
+
+AUTO DIFFICULTY:
+easy       = 4 teams  
+medium     = 5 teams  
+hard       = 6 teams  
+expert     = 7 teams  
+elite      = 8 teams  
+legendary  = 9–10 teams  
+
+STRICT JSON FORMAT:
+{
+  "question": "Which player has played for all of these teams: A, B, C, ...?",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "basketball_multiteam",
+  "difficulty": "<auto>"
+}
+
+RULES:
+- 3 options must NOT meet the criteria.
+- All players must be real with known team histories.
+- Output must be valid JSON only.
+
+Return ONLY a JSON array.

@@ -1,0 +1,36 @@
+Generate exactly 10 multiple-choice BASKETBALL questions.
+
+CATEGORY: "basketball_not_teammates"
+
+QUESTION TYPE:
+"Which player has NOT played with ALL of these players?"
+
+STRICT FACT RULES:
+- Verify ALL teammate data across NBA, WNBA, EuroLeague, Olympics, and national teams.
+- One option MUST be a player who has NOT been teammates with all listed players.
+- Other 3 options MUST have been teammates with ALL listed players.
+- Replace any uncertain relationship immediately.
+
+AUTO DIFFICULTY SCALING:
+easy       = 3 players  
+medium     = 4 players  
+hard       = 5 players  
+expert     = 6 players  
+elite      = 7 players  
+legendary  = 8–10 players  
+
+JSON FORMAT:
+{
+  "question": "Which player has NOT played with all these players: A, B, C, ...?",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "basketball_not_teammates",
+  "difficulty": "<auto>"
+}
+
+RULES:
+- All 4 options must be real players.
+- Only ONE correct answer.
+- Output must be valid JSON only.
+
+Return ONLY a JSON array of 10 items.

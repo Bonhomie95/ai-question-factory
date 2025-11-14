@@ -1,0 +1,32 @@
+Generate exactly 10 multiple-choice HISTORY questions.
+
+CATEGORY: "history_events_same_year"
+
+QUESTION TYPE:
+"What year did ALL of these events happen?"
+
+FACT RULES:
+- All events MUST have occurred in the SAME exact year.
+- If ANY event is uncertain, replace it.
+- Options must be 4 different years.
+
+AUTO DIFFICULTY:
+easy    = 2 events
+medium  = 3 events
+hard    = 4 events
+expert  = 5
+elite   = 6
+legendary = 7–10
+
+JSON FORMAT:
+{
+  "question": "What year did all of these events happen: <list>?",
+  "options": ["YYYY","YYYY","YYYY","YYYY"],
+  "answer": "YYYY",
+  "category": "history_events_same_year",
+  "difficulty": "<auto>"
+}
+
+RULES:
+- Only one correct year.
+- Only JSON array.

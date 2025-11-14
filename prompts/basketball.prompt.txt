@@ -1,32 +1,29 @@
-Generate exactly 10 multiple-choice basketball questions.
+Generate exactly 10 multiple-choice BASKETBALL questions.
 
-You MUST follow the schema below for every question:
+CATEGORY: "basketball"
 
-{
-  "question": "string",
-  "options": ["string", "string", "string", "string"],
-  "answer": "string",
-  "difficulty": "easy" | "medium" | "hard"
-}
-
-STRICT RULES:
-- Output ONLY a JSON array of 10 objects.
-- No explanation.
-- No markdown.
-- No text before or after.
-- No backticks.
-- All fields must be present.
-- The answer MUST match exactly one option.
-- Options MUST be 4 unique values.
-- Difficulty must be one of: easy, medium, hard.
+Follow ALL GENERAL RULES and AUTO DIFFICULTY SCALING.
 
 CONTENT REQUIREMENTS:
-- Mix NBA, WNBA, EuroLeague, FIBA, historical legends, modern stars, rules, scoring, MVPs, championships.
-- Include a mix of decades: 1980s → present.
-- Include international basketball topics.
+- NBA, WNBA, EuroLeague, FIBA.
+- Include legends and modern stars.
+- Include MVPs, champions, scoring, records, rivalries.
+- Include rules, drafts, statistics, dynasties.
+- Mix eras from 1980s → present.
+- Include international basketball history.
 
-RETURN ONLY THIS:
-[
-  {...}, {...}, {...}, {...}, {...},
-  {...}, {...}, {...}, {...}, {...}
-]
+JSON FORMAT:
+{
+  "question": "string",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "basketball",
+  "difficulty": "<auto>"
+}
+
+RULES:
+- All 4 options must be unique.
+- Answer MUST match one option.
+- Output MUST be valid JSON with 10 objects.
+
+Return ONLY the JSON array.

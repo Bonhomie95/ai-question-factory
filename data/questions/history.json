@@ -1,0 +1,266 @@
+[
+  {
+    "question": "Who was the first president of the United States?",
+    "options": [
+      "George Washington",
+      "Thomas Jefferson",
+      "Abraham Lincoln",
+      "Benjamin Franklin"
+    ],
+    "answer": "George Washington",
+    "category": "history",
+    "difficulty": "easy"
+  },
+  {
+    "question": "What year did Christopher Columbus sail to America for the first time?",
+    "options": [
+      "1492",
+      "1503",
+      "1607",
+      "1620"
+    ],
+    "answer": "1492",
+    "category": "history",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Who was the first emperor of China's Qin dynasty?",
+    "options": [
+      "Deng Xiaoping",
+      "Genghis Khan",
+      "Emperor Qin Shi Huang",
+      "Sun Tzu"
+    ],
+    "answer": "Emperor Qin Shi Huang",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What year did the American Revolutionary War end?",
+    "options": [
+      "1783",
+      "1775",
+      "1790",
+      "1763"
+    ],
+    "answer": "1783",
+    "category": "history",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which country was the first to colonize Australia in 1788?",
+    "options": [
+      "France",
+      "Spain",
+      "Britain",
+      "Russia"
+    ],
+    "answer": "Britain",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "question": "In what year did Queen Elizabeth I of England die?",
+    "options": [
+      "1603",
+      "1582",
+      "1597",
+      "1614"
+    ],
+    "answer": "1603",
+    "category": "history",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Who invented the steam engine?",
+    "options": [
+      "James Watt",
+      "Isaac Newton",
+      "Thomas Edison",
+      "George Stephenson"
+    ],
+    "answer": "James Watt",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What year did the Battle of Hastings take place?",
+    "options": [
+      "1064",
+      "1066",
+      "1072",
+      "1085"
+    ],
+    "answer": "1066",
+    "category": "history",
+    "difficulty": "easy"
+  },
+  {
+    "question": "What year did the Magna Carta, a crucial document for civil liberties in England, sign?",
+    "options": [
+      "1297",
+      "1305",
+      "1215",
+      "1400"
+    ],
+    "answer": "1215",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which ancient civilization built the Great Pyramid?",
+    "options": [
+      "Ancient Egypt",
+      "Mesopotamia",
+      "Indus Valley Civilisation",
+      "Chinese Civilization"
+    ],
+    "answer": "Ancient Egypt",
+    "category": "history",
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the name given to the system of ranks in ancient China's Imperial system?",
+    "options": [
+      "Feudalism",
+      "Confucianism",
+      "Bureaucracy",
+      "Mandarins"
+    ],
+    "answer": "Mandarins",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Who founded the Communist Party of China?",
+    "options": [
+      "Chiang Kai-shek",
+      "Ho Chi Minh",
+      "Sun Yat-sen",
+      "Li Dazhao"
+    ],
+    "answer": "Li Dazhao",
+    "category": "history",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which empire conquered the Indus Valley Civilization?",
+    "options": [
+      "Byzantine Empire",
+      "Akkadian Empire",
+      "Babylonian Empire",
+      "Persian Achaemenid Empire"
+    ],
+    "answer": "Persian Achaemenid Empire",
+    "category": "history",
+    "difficulty": "easy"
+  },
+  {
+    "question": "When was the Treaty of Versailles signed?",
+    "options": [
+      "1916",
+      "1918",
+      "1920",
+      "1939"
+    ],
+    "answer": "1918",
+    "category": "history",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Who was the first person to land on the moon?",
+    "options": [
+      "Neil Armstrong",
+      "Buzz Aldrin",
+      "Alan Shepard",
+      "Edwin Aldrin"
+    ],
+    "answer": "Neil Armstrong",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which empire established Pax Romana, a period of peace and stability in the Roman Empire?",
+    "options": [
+      "Parthian Empire",
+      "Carthaginian Empire",
+      "Roman Republic",
+      "Roman Empire"
+    ],
+    "answer": "Roman Empire",
+    "category": "history",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who was the leader of the French Revolution?",
+    "options": [
+      "Napoleon Bonaparte",
+      "Robespierre",
+      "Voltaire",
+      "Edmund Burke"
+    ],
+    "answer": "Robespierre",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which ancient civilization is known for constructing the Great Wall of China?",
+    "options": [
+      "Minoans",
+      "Romans",
+      "Zhengguo",
+      "Qin Shi Huang"
+    ],
+    "answer": "Qin Shi Huang",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "question": "In which century did the Hundred Years' War take place between England and France?",
+    "options": [
+      "16th Century",
+      "15th Century",
+      "14th Century",
+      "13th Century"
+    ],
+    "answer": "14th Century",
+    "category": "history",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which treaty is most closely associated with the end of World War I?",
+    "options": [
+      "Treaty of Versailles",
+      "Munich Agreement",
+      "Pax Britannica",
+      "Rome-Berlin Pact"
+    ],
+    "answer": "Treaty of Versailles",
+    "category": "history",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which inventor is credited with the creation of the telephone in 1876?",
+    "options": [
+      "Albert Einstein",
+      "Thomas Edison",
+      "Alexander Graham Bell",
+      "Marie Curie"
+    ],
+    "answer": "Alexander Graham Bell",
+    "category": "history",
+    "difficulty": "expert"
+  },
+  {
+    "question": "Which significant event marked the beginning of World War II?",
+    "options": [
+      "Pearl Harbor Attack",
+      "Stalingrad Battle",
+      "D-Day Invasion",
+      "Potsdam Conference"
+    ],
+    "answer": "Pearl Harbor Attack",
+    "category": "history",
+    "difficulty": "legendary"
+  }
+]

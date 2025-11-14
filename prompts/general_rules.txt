@@ -1,28 +1,65 @@
-GENERAL JSON RULES (APPLY TO ALL CATEGORIES):
+GENERAL JSON RULES (APPLY TO ALL CATEGORIES)
 
-STRICT OUTPUT:
-- You MUST output ONLY a JSON array.
-- No explanations, no markdown, no prose, no comments.
-- No backticks, no trailing text, no leading text.
-- The output must be valid JSON that parses without repair.
+STRICT OUTPUT RULES:
+- Output ONLY a JSON array.
+- No explanations, no markdown, no prose, no commentary.
+- No backticks.
+- No trailing text before or after the JSON.
+- The JSON must parse VALIDLY without any repair.
 
-REQUIRED FORMAT (every object must follow this exact structure):
+REQUIRED JSON SCHEMA FOR EVERY ITEM:
 {
   "question": "string",
   "options": ["string", "string", "string", "string"],
   "answer": "string",
   "category": "<category>",
-  "difficulty": "easy" | "medium" | "hard"
+  "difficulty": "easy" | "medium" | "hard" | "expert" | "elite" | "legendary"
 }
 
-RULES:
-- All 4 options must be unique.
-- The answer MUST be exactly one of the options.
-- Difficulty MUST be one of: easy, medium, hard.
-- Keep the question short, factual, and meaningful.
-- Avoid AI phrasing, filler, or meta-references.
-- Avoid repeating similar questions — use broad topic variety.
-- Always return exactly 10 items per generation.
+AUTO DIFFICULTY SCALING RULES:
+You MUST auto-assign difficulty using the rules below. Do NOT choose randomly.
 
-REMINDER:
-Return ONLY the JSON array, nothing else.
+EASY:
+- Very common players/teams/events.
+- Straightforward facts.
+- Logic chain: 2–3 steps.
+
+MEDIUM:
+- Popular events or moderately deep trivia.
+- Logic chain: 3–4 steps.
+
+HARD:
+- Cross-league, cross-era, or cross-national knowledge.
+- Logic chain: 4–5 steps.
+
+EXPERT:
+- Requires deep knowledge of league history, transfers, rivalries, geopolitical facts, or timelines.
+- Logic chain: 5–6 steps.
+
+ELITE:
+- Rare trivia requiring expert-level historical recall.
+- Logic chain: 6–7 steps.
+- Often cross-era + cross-team + international.
+
+LEGENDARY:
+- GOAT-tier difficulty — extremely rare facts.
+- Logic chain: 8–10 steps.
+- Must be FACTUALLY VERIFIED.
+
+FACT ACCURACY:
+- Every fact MUST be correct.
+- If uncertain, you MUST regenerate the question internally.
+- Do NOT output guesses or hallucinations.
+
+OPTIONS:
+- All 4 options MUST be unique.
+- Answer MUST match exactly one of the options.
+
+CONTENT:
+- Questions must be factual, clear, short, and meaningful.
+- Avoid repetitive phrasing.
+- Avoid AI meta language or filler phrases.
+
+RETURN:
+- ALWAYS return exactly 10 JSON objects.
+- Return ONLY the JSON array.

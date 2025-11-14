@@ -52,8 +52,17 @@ export function validateQuestion(q) {
   }
 
   // VALIDATE DIFFICULTY
-  if (!['easy', 'medium', 'hard'].includes(q.difficulty)) {
-    errors.push('Difficulty missing or invalid');
+  const allowedLevels = [
+    'easy',
+    'medium',
+    'hard',
+    'expert',
+    'elite',
+    'legendary',
+  ];
+
+  if (!allowedLevels.includes(q.difficulty)) {
+    errors.push('Invalid difficulty level');
   }
 
   return {

@@ -1,0 +1,40 @@
+Generate exactly 10 multiple-choice BASKETBALL questions.
+
+CATEGORY: "basketball_coaches"
+
+QUESTION TYPE:
+"Which coach has coached ALL of these players?"
+
+STRICT FACT RULES:
+- You MUST verify every player–coach link.
+- Only include combinations that are 100% correct across NBA, WNBA, EuroLeague, NCAA, and national teams.
+- If ANY player–coach pairing is uncertain, replace it before generating output.
+- All 4 options must be real coaches.
+
+AUTO DIFFICULTY SCALING:
+Do NOT choose difficulty manually.
+Assign difficulty based on number of listed players:
+
+easy       = 4 players  
+medium     = 5 players  
+hard       = 6 players  
+expert     = 7 players  
+elite      = 8 players  
+legendary  = 9–10 players  
+
+STRICT JSON FORMAT:
+{
+  "question": "Which coach has coached all of these players: A, B, C, ...?",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "basketball_coaches",
+  "difficulty": "<auto>"
+}
+
+ADDITIONAL RULES:
+- The correct answer MUST have coached all listed players.
+- The 3 incorrect options must NOT satisfy the requirement.
+- All options must be unique.
+- No markdown. No explanation. No backticks.
+
+Return ONLY a JSON array of 10 objects.

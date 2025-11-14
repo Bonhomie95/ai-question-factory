@@ -1,0 +1,33 @@
+Generate exactly 10 multiple-choice GEOGRAPHY questions.
+
+CATEGORY: "geography_not_borders_all"
+
+QUESTION TYPE:
+"Which country does NOT border ALL of these countries?"
+
+FACT RULES:
+- All listed countries MUST share borders with each other.
+- Three options MUST border ALL listed countries.
+- One option MUST NOT border all of them.
+- Replace uncertain combinations before output.
+
+AUTO DIFFICULTY (do NOT assign manually):
+easy       = 2 listed borders
+medium     = 3
+hard       = 4
+expert     = 5
+elite      = 6
+legendary  = 7–10
+
+JSON FORMAT:
+{
+  "question": "Which country does NOT border all of these countries: <list>?",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "geography_not_borders_all",
+  "difficulty": "<auto>"
+}
+
+STRICT RULES:
+- Answer MUST be the only incorrect country.
+- Only JSON array output.

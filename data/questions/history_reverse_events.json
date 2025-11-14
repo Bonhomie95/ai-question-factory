@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Which event did NOT happen in the year 2004?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer": "D",
+    "category": "history_false_year",
+    "difficulty": "easy"
+  }
+]

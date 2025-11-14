@@ -1,0 +1,29 @@
+Generate exactly 10 multiple-choice FOOTBALL teammate-logic questions.
+
+CATEGORY: "football_teammates"
+
+QUESTION TYPE:
+"Which footballer has played with ALL of the following players?"
+
+FACT RULES:
+- Every teammate link MUST be real and verified.
+- Use both club football + national teams.
+- If the teammate chain is uncertain, replace before generating output.
+- List 4–10 players depending on difficulty.
+
+AUTO DIFFICULTY:
+Automatically assign difficulty based on number of listed players.
+
+JSON FORMAT:
+{
+  "question": "Which player has played with all of the following players: A, B, C, ...?",
+  "options": ["A","B","C","D"],
+  "answer": "A",
+  "category": "football_teammates",
+  "difficulty": "<auto>"
+}
+
+RULES:
+- One option MUST satisfy all teammate links.
+- Other 3 must NOT.
+- Output ONLY a JSON array of 10 items.
