@@ -5,6 +5,7 @@ import { EmbeddingStore } from '../models/embeddingStore.js';
 import { QuestionModel } from '../models/questionModel.js';
 import { isDuplicate } from '../utils/dedupe.js';
 import { validateQuestion } from '../utils/filters.js';
+import { repairJsonArray } from '../utils/jsonRepair.js';
 
 export class BaseGenerator {
   constructor(category, promptFile) {
@@ -20,20 +21,49 @@ export class BaseGenerator {
   }
 
   async generateBatch() {
-    const prompt = this.loadPrompt();
-
     console.log(`\n🧠 Generating questions for ${this.category}...`);
 
+    const prompt = this.loadPrompt();
     const raw = await generateText(prompt);
 
+    // -------------------------------------------
+    // CLEAN / SANITIZE MODEL OUTPUT
+    // -------------------------------------------
+    let cleaned = raw
+      .replace(/```json/gi, '')
+      .replace(/```/g, '')
+      .trim();
+
+    // Extract only JSON array
+    const firstBracket = cleaned.indexOf('[');
+    const lastBracket = cleaned.lastIndexOf(']');
+
+    if (firstBracket !== -1 && lastBracket !== -1) {
+      cleaned = cleaned.substring(firstBracket, lastBracket + 1);
+    }
+
+    // -------------------------------------------
+    // PARSE JSON
+    // -------------------------------------------
     let parsed;
+    let repaired = repairJsonArray(cleaned);
     try {
-      parsed = JSON.parse(raw);
+      parsed = JSON.parse(repaired);
+
+      if (!Array.isArray(parsed)) {
+        throw new Error('Parsed JSON is not an array');
+      }
     } catch (err) {
-      console.error('❌ Failed to parse model output. Dumping text:\n', raw);
+      console.error('❌ Failed even after repair.');
+      console.error('🔍 RAW:', raw);
+      console.error('🔍 CLEANED:', cleaned);
+      console.error('🔍 REPAIRED:', repaired);
       throw err;
     }
 
+    // -------------------------------------------
+    // VALIDATION + DEDUPE + SAVE
+    // -------------------------------------------
     const newQuestions = [];
 
     for (const q of parsed) {
@@ -43,12 +73,11 @@ export class BaseGenerator {
         console.log('⚠️ Filtered out (quality):', validation.errors.join(', '));
         continue;
       }
+
       const text = q.question || q.prompt || JSON.stringify(q);
 
-      // embed for dedupe
       const embedding = await getEmbedding(text);
 
-      // load existing embeddings
       const all = this.embeddingStore.getAll();
 
       if (isDuplicate(text, embedding, all)) {
@@ -56,14 +85,10 @@ export class BaseGenerator {
         continue;
       }
 
-      // save embedding
       this.embeddingStore.add(text, embedding);
-
-      // collect question for saving
       newQuestions.push(q);
     }
 
-    // save final batch
     this.model.saveManyToPending(newQuestions);
 
     console.log(`✅ Saved ${newQuestions.length} new questions.`);

@@ -1,9 +1,29 @@
-Generate 10 unique HISTORY questions following the GENERAL RULES.
+Generate exactly 10 multiple-choice HISTORY questions.
+
+Use the following schema for every question:
+
+{
+  "question": "string",
+  "options": ["string", "string", "string", "string"],
+  "answer": "string",
+  "difficulty": "easy" | "medium" | "hard"
+}
+
+STRICT RULES:
+- Output ONLY a JSON array of 10 objects.
+- No explanation.
+- No markdown.
+- No backticks.
+- No text before or after the JSON.
+- The answer MUST match an option.
+- Options MUST be 4 unique values.
+- Difficulty must be one of: easy, medium, hard.
 
 CONTENT REQUIREMENTS:
-- Cover world wars, civilizations, leaders, inventions, revolutions, African history, European history, Asian empires, and key dates.
-- Include ancient, medieval, and modern timelines.
-- Avoid overly obscure topics.
-- Ensure diverse continents and cultures.
+- Cover ancient civilizations, empires, wars, colonization, treaties, revolutions, dynasties, and major leaders.
 
-Return ONLY the JSON array.
+RETURN ONLY THIS:
+[
+  {...}, {...}, {...}, {...}, {...},
+  {...}, {...}, {...}, {...}, {...}
+]

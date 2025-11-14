@@ -10,6 +10,7 @@ export const config = {
   PRIMARY_MODEL: process.env.PRIMARY_MODEL,
   BACKUP_MODEL: process.env.BACKUP_MODEL,
   EMBED_MODEL: process.env.EMBED_MODEL,
+  OLLAMA_HOST: process.env.OLLAMA_HOST,
 
   DUPLICATE_THRESHOLD: parseFloat(process.env.DUPLICATE_THRESHOLD || '0.85'),
   BATCH_SIZE: parseInt(process.env.BATCH_SIZE || '20', 10),

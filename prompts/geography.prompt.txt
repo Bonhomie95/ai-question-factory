@@ -1,9 +1,27 @@
-Generate 10 unique GEOGRAPHY questions following the GENERAL RULES.
+Generate exactly 10 multiple-choice GEOGRAPHY questions.
+
+Schema:
+{
+  "question": "string",
+  "options": ["string", "string", "string", "string"],
+  "answer": "string",
+  "difficulty": "easy" | "medium" | "hard"
+}
+
+STRICT RULES:
+- Output ONLY a JSON array of 10 objects.
+- No explanation or natural language.
+- No markdown.
+- No backticks.
+- All fields required.
+- Answer MUST be inside options.
+- Options MUST be 4 unique values.
 
 CONTENT REQUIREMENTS:
-- Cover continents, rivers, deserts, oceans, capitals, climate, and cultures.
-- Include both physical and human geography.
-- Mix easy, medium, and hard.
-- Ensure global diversity: Africa, Europe, Asia, Americas, Oceania.
+- Include countries, capitals, mountains, rivers, climate, continents, borders, population, and world locations.
 
-Return ONLY the JSON array.
+RETURN ONLY THIS:
+[
+  {...}, {...}, {...}, {...}, {...},
+  {...}, {...}, {...}, {...}, {...}
+]

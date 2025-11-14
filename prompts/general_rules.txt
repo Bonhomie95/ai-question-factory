@@ -1,14 +1,28 @@
-GENERAL RULES:
-- ALWAYS return valid JSON only. No commentary. No markdown.
-- Output must be a JSON array of objects.
-- Each object must contain:
-  {
-    "question": "...",
-    "options": ["A", "B", "C", "D"],
-    "answer": "A",
-    "category": "<category>",
-    "difficulty": "easy|medium|hard"
-  }
-- Avoid repeating any question that sounds similar to previous knowledge.
-- Use global variation and avoid repeating the same style.
-- Keep questions short, clear, factual, and interesting.
+GENERAL JSON RULES (APPLY TO ALL CATEGORIES):
+
+STRICT OUTPUT:
+- You MUST output ONLY a JSON array.
+- No explanations, no markdown, no prose, no comments.
+- No backticks, no trailing text, no leading text.
+- The output must be valid JSON that parses without repair.
+
+REQUIRED FORMAT (every object must follow this exact structure):
+{
+  "question": "string",
+  "options": ["string", "string", "string", "string"],
+  "answer": "string",
+  "category": "<category>",
+  "difficulty": "easy" | "medium" | "hard"
+}
+
+RULES:
+- All 4 options must be unique.
+- The answer MUST be exactly one of the options.
+- Difficulty MUST be one of: easy, medium, hard.
+- Keep the question short, factual, and meaningful.
+- Avoid AI phrasing, filler, or meta-references.
+- Avoid repeating similar questions — use broad topic variety.
+- Always return exactly 10 items per generation.
+
+REMINDER:
+Return ONLY the JSON array, nothing else.

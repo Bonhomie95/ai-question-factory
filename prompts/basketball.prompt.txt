@@ -1,8 +1,32 @@
-Generate 10 unique BASKETBALL questions following the GENERAL RULES.
+Generate exactly 10 multiple-choice basketball questions.
+
+You MUST follow the schema below for every question:
+
+{
+  "question": "string",
+  "options": ["string", "string", "string", "string"],
+  "answer": "string",
+  "difficulty": "easy" | "medium" | "hard"
+}
+
+STRICT RULES:
+- Output ONLY a JSON array of 10 objects.
+- No explanation.
+- No markdown.
+- No text before or after.
+- No backticks.
+- All fields must be present.
+- The answer MUST match exactly one option.
+- Options MUST be 4 unique values.
+- Difficulty must be one of: easy, medium, hard.
 
 CONTENT REQUIREMENTS:
-- Cover NBA, WNBA, EuroLeague, FIBA, historical legends, modern stars, rules, scoring, MVPs, championships, and team histories.
-- Include questions across different decades (1980s → present).
-- Include international basketball (not only NBA).
+- Mix NBA, WNBA, EuroLeague, FIBA, historical legends, modern stars, rules, scoring, MVPs, championships.
+- Include a mix of decades: 1980s → present.
+- Include international basketball topics.
 
-Return ONLY the JSON array.
+RETURN ONLY THIS:
+[
+  {...}, {...}, {...}, {...}, {...},
+  {...}, {...}, {...}, {...}, {...}
+]

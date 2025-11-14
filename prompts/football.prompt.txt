@@ -1,9 +1,27 @@
-Generate 10 unique FOOTBALL (SOCCER) questions following the GENERAL RULES.
+Generate exactly 10 multiple-choice FOOTBALL (soccer) questions.
+
+Schema:
+{
+  "question": "string",
+  "options": ["string", "string", "string", "string"],
+  "answer": "string",
+  "difficulty": "easy" | "medium" | "hard"
+}
+
+STRICT RULES:
+- Output ONLY a JSON array of 10 objects.
+- No explanation.
+- No markdown.
+- No backticks.
+- All fields must exist.
+- Answer MUST match an option.
+- Options MUST be 4 unique values.
 
 CONTENT REQUIREMENTS:
-- Cover World Cup, UEFA Champions League, AFCON, Copa America, Premier League, La Liga, Serie A, Bundesliga.
-- Include players, clubs, stadiums, records, transfers, and historical moments.
-- Use modern and classic football (1970s → present).
-- Ensure global coverage: Africa, Europe, South America, Asia.
+- Include World Cup, UEFA, EPL, La Liga, AFCON, Copa America, legends, modern stars, clubs, managers, tactics, and rules.
 
-Return ONLY the JSON array.
+RETURN ONLY THIS:
+[
+  {...}, {...}, {...}, {...}, {...},
+  {...}, {...}, {...}, {...}, {...}
+]
